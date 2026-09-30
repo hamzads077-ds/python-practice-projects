@@ -1,2 +1,2 @@
 # python-practice-projects
-My basic Python practice programs and scripts
+My basic Python practice programs and scripts.
