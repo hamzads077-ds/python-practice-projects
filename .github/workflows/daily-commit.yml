@@ -2,7 +2,7 @@ name: Daily Auto Commit
 
 on:
   schedule:
-    # Daily UTC raat 12 baje auto-run hoga (Schedule change bhi kar sakte hain)
+  
     - cron: '0 0 * * *'
   workflow_dispatch: # Direct manually run karne ke liye
 
