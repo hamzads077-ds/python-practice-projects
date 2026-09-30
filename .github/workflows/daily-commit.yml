@@ -1,0 +1,29 @@
+name: Daily Auto Commit
+
+on:
+  schedule:
+    # Daily UTC raat 12 baje auto-run hoga (Schedule change bhi kar sakte hain)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Direct manually run karne ke liye
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Update Log File
+        run: |
+          echo "Last auto commit: $(date)" >> streak.txt
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add streak.txt
+          git commit -m "chore: daily streak update 🚀"
+          git push
