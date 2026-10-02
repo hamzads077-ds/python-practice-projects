@@ -8,4 +8,6 @@ elif (light == "green"):
     print ("go")
 else:
     print ("light is broken")
+else: 
+    print("There is no signal Here")
 
