@@ -11,6 +11,5 @@ elif operator == '*':
     print(n1, operator, n2, "=", n1*n2)
 elif operator == "/":
     print(n1, operator, n2, "=", n1/n2)
-    
 else:
     print("Invalid Operator...")          
